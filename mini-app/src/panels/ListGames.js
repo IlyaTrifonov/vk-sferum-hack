@@ -27,7 +27,7 @@ const DEFAULT_VALUE = false;
 
 import Games from '../components/Games'
 
-const ListGames = ({id, go, route, fetchedUser, fetchedState, snackbarError}) => {
+const ListGames = ({id, fetchedState, snackbarError}) => {
     console.log(fetchedState);
 
     /*

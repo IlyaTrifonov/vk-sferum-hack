@@ -17,8 +17,6 @@ import Card from "./panels/Card";
 import {Icon24Error} from "@vkontakte/icons";
 
 const ROUTES = {
-	HOME: 'home',
-	INTRO: 'intro',
 	LIST_GAMES: 'listGames'
 }
 
@@ -35,7 +33,6 @@ const App = () => {
 	// const [fetchedUser, setUser] = useState(null);
 	const [popout, setPopout] = useState(<ScreenSpinner size='large' />);
 	const [snackbar, setSnackbar] = useState(null);
-	const [userHasSeenIntro, setUserHasSeenIntro] = useState(false);
 	const [fetchedState, setFetchedState] = useState(null);
 
 	useEffect(() => {
@@ -63,14 +60,6 @@ const App = () => {
 							case STORAGE_KEYS.CARD_STATUS:
 								setFetchedState(data[STORAGE_KEYS.CARD_STATUS]);
 								break;
-/*
-							case STORAGE_KEYS.STATUS:
-								if (data[key] && data[key].hasSeenIntro) {
-									setActivePanel(ROUTES.HOME);
-									setUserHasSeenIntro(true);
-								}
-								break;
-*/
 							default:
 								break;
 						}
@@ -91,7 +80,6 @@ const App = () => {
 			} else {
 				setFetchedState({});
 			}
-			// setUser(user);
 			setPopout(null);
 		}
 		fetchData();
